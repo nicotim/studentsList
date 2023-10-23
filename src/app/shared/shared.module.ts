@@ -10,9 +10,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { MatTableModule } from '@angular/material/table';
 import { FormErrorPipe } from './pipes/form-error.pipe';
+import { FontSizeDirective } from './directives/font-size.directive';
 
 @NgModule({
-  declarations: [FullnamePipe, FormErrorPipe],
+  declarations: [FullnamePipe, FormErrorPipe, FontSizeDirective],
   imports: [CommonModule],
   exports: [
     MatButtonModule,
@@ -25,6 +26,7 @@ import { FormErrorPipe } from './pipes/form-error.pipe';
     FullnamePipe,
     MatTableModule,
     FormErrorPipe,
+    FontSizeDirective,
   ],
 })
 export class SharedModule {}
