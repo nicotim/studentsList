@@ -11,6 +11,7 @@ import { FullnamePipe } from './pipes/fullname.pipe';
 import { MatTableModule } from '@angular/material/table';
 import { FormErrorPipe } from './pipes/form-error.pipe';
 import { FontSizeDirective } from './directives/font-size.directive';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [FullnamePipe, FormErrorPipe, FontSizeDirective],
@@ -27,6 +28,7 @@ import { FontSizeDirective } from './directives/font-size.directive';
     MatTableModule,
     FormErrorPipe,
     FontSizeDirective,
+    MatListModule,
   ],
 })
 export class SharedModule {}

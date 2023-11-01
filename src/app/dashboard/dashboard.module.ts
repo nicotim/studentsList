@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from './pages/forms/forms.module';
 import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from '../shared/shared.module';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -16,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     MatToolbarModule,
     FormsModule,
     UsersModule,
+    HomeModule,
   ],
   exports: [DashboardComponent],
 })

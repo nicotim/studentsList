@@ -8,17 +8,26 @@
   justify-content: center;
 }
 
+mat-nav-list {
+  display: flex;
+  align-items: center;
+  font-size: 75px;
+}
+
 .example-sidenav {
   padding: 20px;
 }
 
-.example-card {
-  max-width: 100px;
-  height: 100px;
-  margin: 1rem;
+.entry {
+  font-weight: 400;
+  padding: 20px;
 }
 
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
+span {
+  margin: 0 0 0 0.25em;
+}
+
+app-home {
+  margin-left: auto;
+  margin-right: 0;
 }

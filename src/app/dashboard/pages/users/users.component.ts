@@ -18,7 +18,12 @@ export class UsersComponent {
     private matDialog: MatDialog,
     private usersService: UsersService
   ) {
-    this.users = this.usersService.getUsers();
+    this.usersService.loadUsers();
+    this.usersService.getUsers().subscribe({
+      next: (v) => {
+        this.users = v;
+      },
+    });
   }
 
   openUsersDialog(): void {
@@ -27,7 +32,6 @@ export class UsersComponent {
       .afterClosed()
       .subscribe({
         next: (v) => {
-          console.log(v);
           if (!!v) {
             this.users = [
               ...this.users,
