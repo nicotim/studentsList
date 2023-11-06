@@ -7,6 +7,8 @@ import { FormsModule } from './pages/forms/forms.module';
 import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from '../shared/shared.module';
 import { HomeModule } from './pages/home/home.module';
+import { RouterModule } from '@angular/router';
+import { ClockModule } from './pages/clock/clock.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -18,6 +20,8 @@ import { HomeModule } from './pages/home/home.module';
     FormsModule,
     UsersModule,
     HomeModule,
+    RouterModule,
+    ClockModule,
   ],
   exports: [DashboardComponent],
 })
