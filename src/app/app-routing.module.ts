@@ -6,6 +6,8 @@ import { HomeComponent } from './dashboard/pages/home/home.component';
 import { UsersComponent } from './dashboard/pages/users/users.component';
 import { CoursesComponent } from './dashboard/pages/courses/courses.component';
 import { UserDetailComponent } from './dashboard/pages/users/components/user-detail/user-detail.component';
+import { InscriptionsComponent } from './dashboard/pages/inscriptions/inscriptions.component';
+import { StudentsComponent } from './dashboard/pages/students/students.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
       {
         path: 'courses',
         component: CoursesComponent,
+      },
+      {
+        path: 'inscriptions',
+        component: InscriptionsComponent,
+      },
+      {
+        path: 'students',
+        component: StudentsComponent,
       },
       {
         path: '**',

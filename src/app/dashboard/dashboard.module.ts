@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { FormsModule } from './pages/forms/forms.module';
 import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from '../shared/shared.module';
 import { HomeModule } from './pages/home/home.module';
 import { RouterModule } from '@angular/router';
-import { ClockModule } from './pages/clock/clock.module';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -17,11 +15,9 @@ import { ClockModule } from './pages/clock/clock.module';
     MatSidenavModule,
     SharedModule,
     MatToolbarModule,
-    FormsModule,
     UsersModule,
     HomeModule,
     RouterModule,
-    ClockModule,
   ],
   exports: [DashboardComponent],
 })
