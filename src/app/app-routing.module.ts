@@ -45,6 +45,10 @@ const routes: Routes = [
     ],
   },
   {
+    path: '**',
+    redirectTo: 'auth',
+  },
+  {
     path: 'auth',
     component: AuthComponent,
   },
