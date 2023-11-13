@@ -21,6 +21,39 @@ export class CoursesComponent {
   }
 
   addCourse(): void {
-    this.matDialog.open(CoursesDialogComponent);
+    this.matDialog
+      .open(CoursesDialogComponent)
+      .afterClosed()
+      .subscribe({
+        next: (result) => {
+          if (result) {
+            this.courses$ = this.coursesService.createCourse$({
+              id: new Date().getTime(),
+              name: result.name,
+              startDate: result.startDate,
+              endDate: result.endDate,
+            });
+          }
+        },
+      });
+  }
+
+  onDeleteCourse(courseId: number): void {
+    this.courses$ = this.coursesService.deleteCourse$(courseId);
+  }
+
+  onEditCourse(courseID: number): void {
+    this.matDialog
+      .open(CoursesDialogComponent, {
+        data: courseID,
+      })
+      .afterClosed()
+      .subscribe({
+        next: (result) => {
+          if (!!result) {
+            this.courses$ = this.coursesService.editCourse$(courseID, result);
+          }
+        },
+      });
   }
 }

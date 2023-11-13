@@ -1,1 +1,56 @@
-<p>courses-dialog works!</p>
+<h1 mat-dialog-title>Agregar Curso</h1>
+<div mat-dialog-content>
+  <form
+    [formGroup]="courseForm"
+    class="row"
+    style="width: 640px; height: 220px; padding: 0.5rem"
+  >
+    <div class="col-11">
+      <mat-form-field class="w-100">
+        <mat-label>Nombre</mat-label>
+        <input [formControl]="nameControl" matInput />
+        <mat-error>
+          {{ courseForm.get("name")?.errors | formError }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="example-full-width">
+        <mat-label>Fecha de inicio</mat-label>
+        <input
+          matInput
+          matInput
+          [min]="minDate"
+          [matDatepicker]="startDatePicker"
+          [formControl]="startDateControl"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="startDatePicker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="example-full-width">
+        <mat-label>Fecha de finalizacion</mat-label>
+        <input
+          matInput
+          [matDatepicker]="endDatePicker"
+          [formControl]="endDateControl"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="endDatePicker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #endDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="container">
+  <button mat-raised-button (click)="onSubmit()" color="primary">
+    Guardar
+  </button>
+  <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+</div>

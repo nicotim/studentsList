@@ -7,6 +7,7 @@ import { User } from '../../models';
 @Component({
   selector: 'app-users-dialogue',
   templateUrl: './users-dialogue.component.html',
+  styleUrls: ['./users-dialogue.component.scss'],
 })
 export class UsersDialogueComponent {
   userForm: FormGroup;

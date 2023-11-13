@@ -1,6 +1,8 @@
+import { ValidationErrors } from '@angular/forms';
+
 export interface Course {
   id: number;
   name: string;
-  startDate: Date;
-  endDate: Date;
+  startDate: Date | number;
+  endDate: Date | number;
 }

@@ -1,5 +1,9 @@
 <h1>Cursos</h1>
-<app-courses-table [dataSource]="(courses$ | async) || []"></app-courses-table>
+<app-courses-table
+  [dataSource]="(courses$ | async) || []"
+  (editCourse)="onEditCourse($event)"
+  (deleteCourse)="onDeleteCourse($event)"
+></app-courses-table>
 
 <button (click)="addCourse()" class="mb-3" mat-raised-button color="primary">
   <mat-icon>add</mat-icon>

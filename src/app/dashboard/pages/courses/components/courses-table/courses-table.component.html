@@ -19,28 +19,37 @@
   <!-- StartDate-->
   <ng-container matColumnDef="startDate">
     <th mat-header-cell *matHeaderCellDef appFontSize>Fecha de inicio</th>
-    <td mat-cell *matCellDef="let course">{{ course.startDate }}</td>
+    <td mat-cell *matCellDef="let course">
+      {{ course.startDate | date : "dd/MM/YYYY" }}
+    </td>
   </ng-container>
 
   <!-- EndDate -->
   <ng-container matColumnDef="endDate">
     <th mat-header-cell *matHeaderCellDef appFontSize>Fecha de finalizacion</th>
-    <td mat-cell *matCellDef="let course">{{ course.endDate }}</td>
+    <td mat-cell *matCellDef="let course">
+      {{ course.endDate | date : "dd/MM/YYYY" }}
+    </td>
   </ng-container>
 
   <!-- Action Column -->
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef appFontSize>Acciones</th>
     <td mat-cell *matCellDef="let course">
-      <!-- <button (click)="goToDetail(user.id)" mat-icon-button color="accent">
-        <mat-icon>visibility</mat-icon>
-      </button>
-      <button (click)="editUser.emit(user)" mat-icon-button color="primary">
+      <button
+        (click)="editCourse.emit(course.id)"
+        mat-icon-button
+        color="primary"
+      >
         <mat-icon>edit</mat-icon>
       </button>
-      <button (click)="deleteUser.emit(user.id)" mat-icon-button color="warn">
+      <button
+        (click)="deleteCourse.emit(course.id)"
+        mat-icon-button
+        color="warn"
+      >
         <mat-icon>delete</mat-icon>
-      </button> -->
+      </button>
     </td>
   </ng-container>
 
