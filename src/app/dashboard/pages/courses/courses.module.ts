@@ -5,6 +5,7 @@ import { CoursesTableComponent } from './components/courses-table/courses-table.
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoursesDialogComponent } from './components/courses-dialog/courses-dialog.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CoursesRoutingModule } from './courses-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     CoursesTableComponent,
     CoursesDialogComponent,
   ],
-  imports: [CommonModule, SharedModule, MatNativeDateModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MatNativeDateModule,
+    CoursesRoutingModule,
+  ],
 })
 export class CoursesModule {}

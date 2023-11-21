@@ -1,5 +1,3 @@
-import { ValidationErrors } from '@angular/forms';
-
 export interface Course {
   id: number;
   name: string;

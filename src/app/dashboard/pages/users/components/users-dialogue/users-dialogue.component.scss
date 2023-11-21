@@ -1,13 +1,15 @@
 h1 {
   text-align: center;
   color: whitesmoke;
+  margin-top: 10px;
 }
 
-.container {
+.buttons {
   display: flex;
   justify-content: center;
 }
 
-.container button {
+.buttons button {
+  margin-right: 0.5em;
   width: 20%;
 }

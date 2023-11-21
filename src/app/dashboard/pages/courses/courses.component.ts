@@ -28,7 +28,7 @@ export class CoursesComponent {
         next: (result) => {
           if (result) {
             this.courses$ = this.coursesService.createCourse$({
-              id: new Date().getTime(),
+              id: Date.now(),
               name: result.name,
               startDate: result.startDate,
               endDate: result.endDate,

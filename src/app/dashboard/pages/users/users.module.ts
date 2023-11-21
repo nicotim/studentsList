@@ -5,7 +5,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { UsersDialogueComponent } from './components/users-dialogue/users-dialogue.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
-import { RouterModule } from '@angular/router';
+import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
     UsersTableComponent,
     UserDetailComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule],
+  imports: [CommonModule, SharedModule, UsersRoutingModule],
   exports: [UsersComponent],
 })
 export class UsersModule {}

@@ -1,13 +1,13 @@
 <h1 mat-dialogue-title>
   {{ user ? "Editar Usuario" : "Crear Usuario" }}
 </h1>
-<div mat-dialogue-content>
+<div mat-dialogue-content class="container">
   <form
     [formGroup]="userForm"
     class="row"
     style="width: 640px; height: 220px; padding: 0.5rem"
   >
-    <div class="col-5">
+    <div class="col-6">
       <mat-form-field class="w-100">
         <mat-label>Nombre</mat-label>
         <input formControlName="name" matInput />
@@ -16,7 +16,7 @@
         </mat-error>
       </mat-form-field>
     </div>
-    <div class="col-5">
+    <div class="col-6">
       <mat-form-field class="w-100">
         <mat-label>Apellido</mat-label>
         <input matInput formControlName="lastname" />
@@ -25,7 +25,7 @@
         </mat-error>
       </mat-form-field>
     </div>
-    <div class="col-10">
+    <div class="col-12">
       <mat-form-field class="w-100">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email" />
@@ -36,7 +36,7 @@
     </div>
   </form>
 </div>
-<div mat-dialogue-actions class="container">
+<div mat-dialogue-actions class="buttons">
   <button mat-raised-button (click)="onSubmit()" color="primary">
     Guardar
   </button>
