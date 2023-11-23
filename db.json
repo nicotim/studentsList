@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "name": "Nicolas",
+      "lastname": "Timochenko",
+      "email": "fakemail@gmail.com",
+      "password": 123456,
+      "token": "skfafjakfasfiaf",
+      "role": "admin",
+      "id": 1
+    }
+  ],
+  "courses": []
+}

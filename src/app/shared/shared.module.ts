@@ -12,7 +12,6 @@ import { MatTableModule } from '@angular/material/table';
 import { FormErrorPipe } from './pipes/form-error.pipe';
 import { FontSizeDirective } from './directives/font-size.directive';
 import { MatListModule } from '@angular/material/list';
-import { AuthModule } from '../auth/auth.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     FormErrorPipe,
     FontSizeDirective,
     MatListModule,
-    AuthModule,
     MatDatepickerModule,
   ],
 })

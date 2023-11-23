@@ -56,6 +56,14 @@
       </button>
       <span appFontSize>Lista de alumnos</span>
       <span class="example-spacer"></span>
+      <button
+        mat-flat-button
+        color="accent"
+        style="margin-right: 0; margin-left: auto"
+        (click)="logout()"
+      >
+        Cerrar Sesion
+      </button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </div>
