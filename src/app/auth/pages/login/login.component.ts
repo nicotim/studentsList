@@ -11,8 +11,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
-  emailControl = new FormControl(null, [Validators.required, Validators.email]);
-  passwordControl = new FormControl(null, [Validators.required]);
+  emailControl = new FormControl('', [Validators.required, Validators.email]);
+  passwordControl = new FormControl('', [Validators.required]);
 
   loginForm = new FormGroup({
     email: this.emailControl,

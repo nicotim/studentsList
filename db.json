@@ -1,14 +1,60 @@
 {
   "users": [
     {
-      "name": "Nicolas",
-      "lastname": "Timochenko",
-      "email": "fakemail@gmail.com",
-      "password": 123456,
-      "token": "skfafjakfasfiaf",
-      "role": "admin",
-      "id": 1
+      "id": 1,
+      "name": "Nico",
+      "lastname": "Timo",
+      "email": "fake@mail.com",
+      "token": "asassfasfasfaasffa",
+      "role": "ADMIN",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Anto",
+      "lastname": "Gomez",
+      "email": "Anto@mail.com",
+      "token": "afasfafsfa",
+      "role": "ESTUDIANTE",
+      "password": "asdf"
+    },
+    {
+      "id": 3,
+      "name": "Franco",
+      "lastname": "Pedrini",
+      "email": "Pedrini@gmail.com",
+      "token": "etqetqhoiqjmkqf",
+      "role": "ESTUDIANTE",
+      "password": "654321"
+    },
+    {
+      "id": 4,
+      "name": "Jose",
+      "lastname": "Hernandez",
+      "email": "Jose@mail.com",
+      "token": "lgngaspikaskñfoñaksñf",
+      "role": "ADMIN",
+      "password": "1234"
     }
   ],
-  "courses": []
+  "courses": [
+    {
+      " id": 1,
+      "name": "Javascript",
+      "startDate": "27/9/2023",
+      "endDate": "30/1/2024"
+    },
+    {
+      " id": 2,
+      "name": "React",
+      "startDate": "2/11/2023",
+      "endDate": "19/4/2024"
+    },
+    {
+      " id": 3,
+      "name": "UX/UI",
+      "startDate": "17/12/2023",
+      "endDate": "2/5/2024"
+    }
+  ]
 }

@@ -17,7 +17,7 @@ export class UsersTableComponent {
   @Output()
   editUser = new EventEmitter<User>();
 
-  displayedColumns: string[] = ['id', 'name', 'email', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'role', 'email', 'actions'];
 
   constructor(private router: Router) {}
 

@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { UsersDialogueComponent } from './components/users-dialogue/users-dialogue.component';
 import { User } from './models';
 import { UsersService } from './users.service';
+import { Observable } from 'rxjs';
+import { TextUpdateService } from '../../dashboard.service';
 
 @Component({
   selector: 'app-users',
@@ -10,43 +12,37 @@ import { UsersService } from './users.service';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent {
-  users: User[] = [];
+  users$: Observable<User[]>;
 
   userName = '';
 
   constructor(
     private matDialog: MatDialog,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private textUpdateService: TextUpdateService
   ) {
-    this.usersService.loadUsers();
-    this.usersService.getUsers().subscribe({
-      next: (v) => {
-        this.users = v;
-      },
-    });
+    this.users$ = this.usersService.getUsers();
   }
 
-  openUsersDialog(): void {
+  ngOnInit() {
+    this.textUpdateService.updateText('Usuarios');
+  }
+
+  addUser(): void {
     this.matDialog
       .open(UsersDialogueComponent)
       .afterClosed()
       .subscribe({
         next: (v) => {
           if (!!v) {
-            this.users = [
-              ...this.users,
-              {
-                ...v,
-                id: this.users.length + 1,
-              },
-            ];
+            this.users$ = this.usersService.createUser(v);
           }
         },
       });
   }
 
   onDeleteUser(userId: number) {
-    this.users = this.users.filter((user) => user.id !== userId);
+    this.users$ = this.usersService.deleteUser(userId);
   }
 
   onEditUser(user: User): void {
@@ -56,9 +52,7 @@ export class UsersComponent {
       .subscribe({
         next: (v) => {
           if (!!v) {
-            this.users = this.users.map((u) =>
-              u.id === user.id ? { ...u, ...v } : u
-            );
+            this.users$ = this.usersService.updateUser(user.id, v);
           }
         },
       });

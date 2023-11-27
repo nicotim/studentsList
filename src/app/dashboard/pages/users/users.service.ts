@@ -1,22 +1,35 @@
 import { Injectable } from '@angular/core';
 import { User } from './models';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Observable, concatMap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environments } from 'src/environments/environment.local';
+import { Course } from '../courses/models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
-  private users: User[] = [];
-
-  private users$ = new BehaviorSubject<User[]>([]);
-
-  loadUsers(): void {
-    this.users$.next(this.users);
+  getUsers(): Observable<User[]> {
+    return this.httpClient.get<User[]>(`${environments.baseUrl}/users`);
   }
 
-  getUsers(): Subject<User[]> {
-    return this.users$;
+  createUser(payload: User): Observable<User[]> {
+    return this.httpClient
+      .post<User>(`${environments.baseUrl}/users`, payload)
+      .pipe(concatMap(() => this.getUsers()));
+  }
+
+  updateUser(userId: number, payload: User): Observable<User[]> {
+    return this.httpClient
+      .put<User>(`${environments.baseUrl}/users/${userId}`, payload)
+      .pipe(concatMap(() => this.getUsers()));
+  }
+
+  deleteUser(userId: number): Observable<User[]> {
+    return this.httpClient
+      .delete(`${environments.baseUrl}/users/${userId}`)
+      .pipe(concatMap(() => this.getUsers()));
   }
 }

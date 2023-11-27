@@ -1,8 +1,14 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <h2>Panel de control</h2>
+    <h2>Panel de Control</h2>
     <mat-nav-list>
-      <a mat-list-item routerLink="home">
+      <a
+        mat-list-item
+        routerLink="home"
+        routerLinkActive
+        #homeLink="routerLinkActive"
+        [activated]="homeLink.isActive"
+      >
         <span class="entry">
           <mat-icon>home</mat-icon>
           <span>Home</span>
@@ -10,7 +16,13 @@
       </a>
     </mat-nav-list>
     <mat-nav-list>
-      <a mat-list-item routerLink="users">
+      <a
+        mat-list-item
+        routerLink="users"
+        routerLinkActive
+        #usersLink="routerLinkActive"
+        [activated]="usersLink.isActive"
+      >
         <span class="entry">
           <mat-icon>person</mat-icon>
           <span>Usuarios</span>
@@ -18,7 +30,13 @@
       </a>
     </mat-nav-list>
     <mat-nav-list>
-      <a mat-list-item routerLink="courses">
+      <a
+        mat-list-item
+        routerLink="courses"
+        routerLinkActive
+        #coursesLink="routerLinkActive"
+        [activated]="coursesLink.isActive"
+      >
         <span class="entry">
           <mat-icon>laptop_chromebook</mat-icon>
           <span>Cursos</span>
@@ -26,16 +44,28 @@
       </a>
     </mat-nav-list>
     <mat-nav-list>
-      <a mat-list-item>
-        <span class="entry" routerLink="inscriptions">
+      <a
+        mat-list-item
+        routerLink="inscriptions"
+        routerLinkActive
+        #inscriptionsLink="routerLinkActive"
+        [activated]="inscriptionsLink.isActive"
+      >
+        <span class="entry">
           <mat-icon>person_add</mat-icon>
           <span>Inscripciones</span>
         </span>
       </a>
     </mat-nav-list>
     <mat-nav-list>
-      <a mat-list-item>
-        <span class="entry" routerLink="students">
+      <a
+        mat-list-item
+        routerLink="students"
+        routerLinkActive
+        #studetsLink="routerLinkActive"
+        [activated]="studetsLink.isActive"
+      >
+        <span class="entry">
           <mat-icon>school</mat-icon>
           <span>Estudiantes</span>
         </span>
@@ -54,15 +84,15 @@
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span appFontSize>Lista de alumnos</span>
+      <span appFontSize> {{ currentText }}</span>
       <span class="example-spacer"></span>
       <button
         mat-flat-button
-        color="accent"
         style="margin-right: 0; margin-left: auto"
+        color="accent"
         (click)="logout()"
       >
-        Cerrar Sesion
+        <mat-icon>logout</mat-icon>
       </button>
     </mat-toolbar>
     <router-outlet></router-outlet>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map, of } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { User } from 'src/app/dashboard/pages/users/models';
 import { environments } from 'src/environments/environment.local';
 import { loginPayload } from '../models';

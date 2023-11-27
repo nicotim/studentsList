@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Course } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { CoursesDialogComponent } from './components/courses-dialog/courses-dialog.component';
+import { TextUpdateService } from '../../dashboard.service';
 
 @Component({
   selector: 'app-courses',
@@ -15,9 +16,14 @@ export class CoursesComponent {
 
   constructor(
     private coursesService: CoursesService,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private textUpdateService: TextUpdateService
   ) {
     this.courses$ = this.coursesService.getCourses$();
+  }
+
+  ngOnInit() {
+    this.textUpdateService.updateText('Cursos');
   }
 
   addCourse(): void {
