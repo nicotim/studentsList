@@ -1,20 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { User } from 'src/app/dashboard/pages/users/models';
 import { environments } from 'src/environments/environment.local';
 import { loginPayload } from '../models';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { authActions } from 'src/app/store/auth/auth.actions';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private _authUser = new BehaviorSubject<User | null>(null);
+  public authUser$ = this.store.select(selectAuthUser);
 
-  public authUser$ = this._authUser.asObservable();
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+    private store: Store
+  ) {}
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  private handleAuthUser(authUser: User): void {
+    this.store.dispatch(authActions.setAuthUser({ data: authUser }));
+    localStorage.setItem('token', authUser.token);
+  }
 
   login(payload: loginPayload): void {
     this.httpClient
@@ -23,28 +33,25 @@ export class AuthService {
       )
       .subscribe({
         next: (response) => {
-          if (!response.length) {
-            alert('Email o Contraseña invalidos');
+          const authUser = response[0];
+
+          if (!authUser) {
+            alert('Usuario o contrasena invalidos');
           } else {
-            const authUser = response[0];
-            this._authUser.next(authUser);
-            localStorage.setItem('token', authUser.token);
+            this.handleAuthUser(authUser);
             this.router.navigate(['/dashboard/home']);
           }
         },
+        error: (err) => {
+          alert('Error de conexion');
+        },
       });
-  }
-
-  logOut(): void {
-    this._authUser.next(null);
-    localStorage.removeItem('token');
-    this.router.navigate(['/auth/login']);
   }
 
   verifyToken(): Observable<boolean> {
     return this.httpClient
       .get<User[]>(
-        `${environments.baseUrl}/users?token${localStorage.getItem('token')}`
+        `${environments.baseUrl}/users?token=${localStorage.getItem('token')}`
       )
       .pipe(
         map((users) => {
@@ -52,11 +59,16 @@ export class AuthService {
             return false;
           } else {
             const authUser = users[0];
-            this._authUser.next(authUser);
-            localStorage.setItem('token', authUser.token);
+            this.handleAuthUser(authUser);
             return true;
           }
         })
       );
+  }
+
+  logOut(): void {
+    this.store.dispatch(authActions.resetState());
+    localStorage.removeItem('token');
+    this.router.navigate(['/auth/login']);
   }
 }

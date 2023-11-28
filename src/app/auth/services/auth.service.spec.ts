@@ -9,6 +9,8 @@ import { User } from 'src/app/dashboard/pages/users/models';
 import { MockProvider } from 'ng-mocks';
 import { Router } from '@angular/router';
 import { environments } from 'src/environments/environment.local';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { StoreModule } from '@ngrx/store';
 
 describe('AuthService', () => {
   let authService: AuthService;
@@ -16,8 +18,8 @@ describe('AuthService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule],
-      providers: [MockProvider(Router)],
+      imports: [HttpClientTestingModule, RouterTestingModule, StoreModule],
+      providers: [MockProvider(Router), provideMockStore({})],
     });
 
     authService = TestBed.inject(AuthService);
@@ -37,10 +39,10 @@ describe('AuthService', () => {
       id: 1,
       name: 'Nico',
       lastname: 'tim',
-      email: 'fakemail@mail.com',
-      role: 'Admin',
+      email: 'fake@mail.com',
+      role: 'ADMIN',
       token: 'asafaffaffsasffaf',
-      password: '1236',
+      password: '123456',
     };
 
     authService.login({

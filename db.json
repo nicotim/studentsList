@@ -10,31 +10,13 @@
       "password": "123456"
     },
     {
-      "id": 2,
-      "name": "Anto",
-      "lastname": "Gomez",
-      "email": "Anto@mail.com",
-      "token": "afasfafsfa",
-      "role": "ESTUDIANTE",
-      "password": "asdf"
-    },
-    {
       "id": 3,
       "name": "Franco",
       "lastname": "Pedrini",
       "email": "Pedrini@gmail.com",
       "token": "etqetqhoiqjmkqf",
-      "role": "ESTUDIANTE",
+      "role": "EMPLOYEE",
       "password": "654321"
-    },
-    {
-      "id": 4,
-      "name": "Jose",
-      "lastname": "Hernandez",
-      "email": "Jose@mail.com",
-      "token": "lgngaspikaskñfoñaksñf",
-      "role": "ADMIN",
-      "password": "1234"
     }
   ],
   "courses": [

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { StudentsComponent } from './pages/students/students.component';
 import { InscriptionsComponent } from './pages/inscriptions/inscriptions.component';
 import { CoursesComponent } from './pages/courses/courses.component';
@@ -7,6 +7,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './dashboard.component';
 import { CoursesModule } from './pages/courses/courses.module';
+import { AdminGuard } from '../core/guard/admin.guard';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { CoursesModule } from './pages/courses/courses.module';
           },
           {
             path: 'users',
+            canActivate: [AdminGuard],
             loadChildren: () =>
               import('./pages/users/users.module').then((m) => m.UsersModule),
           },

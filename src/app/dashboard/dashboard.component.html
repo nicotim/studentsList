@@ -1,6 +1,9 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <h2>Panel de Control</h2>
+    <div>
+      <p>{{ (authUser$ | async)?.email }}</p>
+    </div>
     <mat-nav-list>
       <a
         mat-list-item
