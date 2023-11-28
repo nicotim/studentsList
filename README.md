@@ -6,6 +6,9 @@ json-server db.json --watch (para la api)
 
 # Usuarios
 
-Para el login usar:
+Admin:
 Mail: fake@mail.com
 Password: 123456
+Employee:
+Mail: Pedrini@gmail.com
+Password: 654321
