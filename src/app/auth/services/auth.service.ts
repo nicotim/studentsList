@@ -9,6 +9,9 @@ import { Store } from '@ngrx/store';
 import { authActions } from 'src/app/store/auth/auth.actions';
 import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthService {
   public authUser$ = this.store.select(selectAuthUser);
 
