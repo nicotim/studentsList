@@ -30,14 +30,16 @@ span {
   margin: 0 0 0 0.25em;
 }
 
-mat-drawer {
-  align-items: end;
-}
-
 mat-icon {
   margin-bottom: 5px;
 }
 
 h2 {
   text-align: center;
+}
+
+.logOut {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 16px;
 }

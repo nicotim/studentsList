@@ -74,6 +74,14 @@
         </span>
       </a>
     </mat-nav-list>
+    <mat-nav-list class="logOut">
+      <a mat-list-item (click)="logout()">
+        <span class="entry">
+          <mat-icon>logout</mat-icon>
+          <span>Cerrar Sesion</span>
+        </span>
+      </a>
+    </mat-nav-list>
   </mat-drawer>
 
   <div class="example-sidenav-content">
@@ -89,14 +97,6 @@
       </button>
       <span appFontSize> {{ currentText }}</span>
       <span class="example-spacer"></span>
-      <button
-        mat-flat-button
-        style="margin-right: 0; margin-left: auto"
-        color="accent"
-        (click)="logout()"
-      >
-        <mat-icon>logout</mat-icon>
-      </button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </div>
