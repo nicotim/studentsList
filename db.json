@@ -10,13 +10,37 @@
       "password": "123456"
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "Franco",
       "lastname": "Pedrini",
       "email": "Pedrini@gmail.com",
       "token": "etqetqhoiqjmkqf",
       "role": "EMPLOYEE",
       "password": "654321"
+    },
+    {
+      "id": 3,
+      "name": "Wancho",
+      "lastname": "Abila",
+      "email": "abila@mail.com",
+      "token": "gadgaughkasff",
+      "role": "STUDENT",
+      "password": "998877"
+    },
+    {
+      "id": 4,
+      "name": "Anto",
+      "lastname": "Sanchez",
+      "email": "anto@mail.com",
+      "token": "gadgauafaaaghkasff",
+      "role": "STUDENT",
+      "password": "13579"
+    },
+    {
+      "name": "Nik",
+      "lastname": "Tim",
+      "email": "nik22timo@gmail.com",
+      "id": 5
     }
   ],
   "courses": [
@@ -37,6 +61,34 @@
       "name": "UX/UI",
       "startDate": "17/12/2023",
       "endDate": "2/5/2024"
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "userId": 3
+    },
+    {
+      "id": 2,
+      "courseId": 3,
+      "userId": 4
+    },
+    {
+      "id": 3,
+      "courseId": 2,
+      "userId": 3
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "Wancho",
+      "lastname": "Abila",
+      "email": "abila@mail.com",
+      "token": "gadgaughkasff",
+      "role": "STUDENT",
+      "password": "998877"
     }
   ]
 }

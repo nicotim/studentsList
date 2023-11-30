@@ -20,11 +20,10 @@ export class CoursesComponent {
     private textUpdateService: TextUpdateService
   ) {
     this.courses$ = this.coursesService.getCourses$();
-  }
-
-  ngOnInit() {
     this.textUpdateService.updateText('Cursos');
   }
+
+  ngOnInit() {}
 
   addCourse(): void {
     this.matDialog

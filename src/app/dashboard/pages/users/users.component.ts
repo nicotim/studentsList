@@ -22,11 +22,10 @@ export class UsersComponent {
     private textUpdateService: TextUpdateService
   ) {
     this.users$ = this.usersService.getUsers();
-  }
-
-  ngOnInit() {
     this.textUpdateService.updateText('Usuarios');
   }
+
+  ngOnInit() {}
 
   addUser(): void {
     this.matDialog

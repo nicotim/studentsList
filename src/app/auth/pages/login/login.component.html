@@ -1,4 +1,4 @@
-<h1>Iniciar Sesion</h1>
+<h1>Login</h1>
 <form [formGroup]="loginForm">
   <div>
     <mat-form-field class="w-100">
@@ -9,8 +9,6 @@
       <mat-label>Password</mat-label>
       <input formControlName="password" matInput type="password" />
     </mat-form-field>
-    <button (click)="login()" mat-flat-button color="primary">
-      Iniciar Sesion
-    </button>
+    <button (click)="login()" mat-flat-button color="primary">Login</button>
   </div>
 </form>

@@ -7,9 +7,9 @@ import { TextUpdateService } from '../../dashboard.service';
   styleUrls: ['./students.component.scss'],
 })
 export class StudentsComponent {
-  constructor(private textUpdateService: TextUpdateService) {}
-
-  ngOnInit() {
+  constructor(private textUpdateService: TextUpdateService) {
     this.textUpdateService.updateText('Estudiantes');
   }
+
+  ngOnInit() {}
 }
