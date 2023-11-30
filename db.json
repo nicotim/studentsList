@@ -20,64 +20,29 @@
     },
     {
       "id": 3,
-      "name": "Wancho",
+      "name": "Martin",
       "lastname": "Abila",
       "email": "abila@mail.com",
       "token": "gadgaughkasff",
-      "role": "STUDENT",
-      "password": "998877"
-    },
-    {
-      "id": 4,
-      "name": "Anto",
-      "lastname": "Sanchez",
-      "email": "anto@mail.com",
-      "token": "gadgauafaaaghkasff",
-      "role": "STUDENT",
-      "password": "13579"
-    },
-    {
-      "name": "Nik",
-      "lastname": "Tim",
-      "email": "nik22timo@gmail.com",
-      "id": 5
-    }
-  ],
-  "courses": [
-    {
-      " id": 1,
-      "name": "Javascript",
-      "startDate": "27/9/2023",
-      "endDate": "30/1/2024"
-    },
-    {
-      " id": 2,
-      "name": "React",
-      "startDate": "2/11/2023",
-      "endDate": "19/4/2024"
-    },
-    {
-      " id": 3,
-      "name": "UX/UI",
-      "startDate": "17/12/2023",
-      "endDate": "2/5/2024"
+      "role": "EMPLOYEE",
+      "password": "1234"
     }
   ],
   "inscriptions": [
     {
       "id": 1,
       "courseId": 1,
-      "userId": 3
+      "studentId": 2
     },
     {
       "id": 2,
       "courseId": 3,
-      "userId": 4
+      "studentId": 1
     },
     {
       "id": 3,
       "courseId": 2,
-      "userId": 3
+      "studentId": 3
     }
   ],
   "students": [
@@ -87,8 +52,52 @@
       "lastname": "Abila",
       "email": "abila@mail.com",
       "token": "gadgaughkasff",
-      "role": "STUDENT",
-      "password": "998877"
+      "password": "998877",
+      "edad": 19,
+      "pais": "Argentina"
+    },
+    {
+      "id": 2,
+      "name": "Anto",
+      "lastname": "Sanchez",
+      "email": "anto@mail.com",
+      "token": "gadgauafaaaghkasff",
+      "password": "13579",
+      "edad": 23,
+      "pais": "Colombia"
+    },
+    {
+      "id": 3,
+      "name": "Jose",
+      "lastname": "Fernandez",
+      "email": "jose@gmail.com",
+      "token": "gadgauadgggafaaaghkasff",
+      "password": "1111",
+      "edad": 27,
+      "pais": "Chile"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Javascript",
+      "teacher": "Franco Pedrini",
+      "startDate": "27/9/2023",
+      "endDate": "30/1/2024"
+    },
+    {
+      "id": 2,
+      "name": "React",
+      "teacher": "Franco Pedrini",
+      "startDate": "2/11/2023",
+      "endDate": "19/4/2024"
+    },
+    {
+      "id": 3,
+      "name": "UX/UI",
+      "teacher": "Martin Abila",
+      "startDate": "17/12/2023",
+      "endDate": "2/5/2024"
     }
   ]
 }

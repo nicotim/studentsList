@@ -9,19 +9,19 @@ export class CoursesService {
       id: 1,
       name: 'Javascript',
       startDate: new Date(),
-      endDate: new Date().setFullYear(2024, 2, 21),
+      endDate: new Date(),
     },
     {
       id: 2,
       name: 'Angular',
-      startDate: new Date().setMonth(11),
-      endDate: new Date().setFullYear(2024, 3, 30),
+      startDate: new Date(),
+      endDate: new Date(),
     },
     {
       id: 3,
       name: 'ReactJS',
-      startDate: new Date().setDate(5),
-      endDate: new Date().setFullYear(2024, 5, 14),
+      startDate: new Date(),
+      endDate: new Date(),
     },
   ];
 

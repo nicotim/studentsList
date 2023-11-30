@@ -13,7 +13,6 @@ export class InscriptionEffects {
     return this.actions$.pipe(
       ofType(InscriptionActions.loadInscriptions),
       concatMap(() =>
-        /** An EMPTY observable only emits completion. Replace with your own observable API request */
         this.getEnrollments().pipe(
           map((data) => InscriptionActions.loadInscriptionsSuccess({ data })),
           catchError((error) =>
@@ -28,7 +27,7 @@ export class InscriptionEffects {
 
   getEnrollments(): Observable<Inscriptions[]> {
     return this.httpClient.get<Inscriptions[]>(
-      `${environments.baseUrl}inscriptions?_expand=course&_expand=user`
+      `${environments.baseUrl}/inscriptions?_expand=course&_expand=student`
     );
   }
 }

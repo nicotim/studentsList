@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Inscriptions } from '../../models';
+import { Observable } from 'rxjs';
+import { selectInscriptions } from '../../store/inscription.selectors';
 
 @Component({
   selector: 'app-inscriptions-table',
@@ -6,5 +10,11 @@ import { Component } from '@angular/core';
   styleUrl: './inscriptions-table.component.scss',
 })
 export class InscriptionsTableComponent {
-  displayedColumns = ['id', 'course', 'student', 'actions'];
+  displayedColumns = ['id', 'course', 'teacher', 'student', 'actions'];
+
+  inscription$: Observable<Inscriptions[]>;
+
+  constructor(private store: Store) {
+    this.inscription$ = this.store.select(selectInscriptions);
+  }
 }

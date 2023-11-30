@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TextUpdateService } from '../../dashboard.service';
+import { Store } from '@ngrx/store';
+import { InscriptionActions } from './store/inscription.actions';
 
 @Component({
   selector: 'app-inscriptions',
@@ -7,8 +9,12 @@ import { TextUpdateService } from '../../dashboard.service';
   styleUrls: ['./inscriptions.component.scss'],
 })
 export class InscriptionsComponent {
-  constructor(private textUpdateService: TextUpdateService) {
+  constructor(
+    private textUpdateService: TextUpdateService,
+    private store: Store
+  ) {
     this.textUpdateService.updateText('Inscripciones');
+    this.store.dispatch(InscriptionActions.loadInscriptions());
   }
 
   ngOnInit() {}

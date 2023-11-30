@@ -22,7 +22,7 @@ export class UsersComponent {
     private textUpdateService: TextUpdateService
   ) {
     this.users$ = this.usersService.getUsers();
-    this.textUpdateService.updateText('Usuarios');
+    this.textUpdateService.updateText('Staff');
   }
 
   ngOnInit() {}

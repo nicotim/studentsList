@@ -11,14 +11,12 @@ import { TextUpdateService } from './dashboard.service';
 })
 export class DashboardComponent {
   showFiller = false;
-  public authUser$: Observable<User | null>;
   currentText: string = '';
 
   constructor(
     private authService: AuthService,
     private textUpdateService: TextUpdateService
   ) {
-    this.authUser$ = this.authService.authUser$;
     this.textUpdateService.currentText$.subscribe((text) => {
       this.currentText = text;
     });
