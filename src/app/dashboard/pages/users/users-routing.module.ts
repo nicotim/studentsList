@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { UsersComponent } from './users.component';
 import { RouterModule } from '@angular/router';
-import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 @NgModule({
   imports: [
@@ -9,10 +8,6 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
       {
         path: '',
         component: UsersComponent,
-      },
-      {
-        path: 'detail/:id',
-        component: UserDetailComponent,
       },
     ]),
   ],

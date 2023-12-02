@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { inscriptionFeature } from './store/inscription.reducer';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { InscriptionsTableComponent } from './components/inscriptions-table/inscriptions-table.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [InscriptionsComponent, InscriptionsTableComponent],
@@ -18,6 +19,8 @@ import { InscriptionsTableComponent } from './components/inscriptions-table/insc
     StoreModule.forFeature(inscriptionFeature),
     EffectsModule.forFeature([InscriptionEffects]),
     EffectsModule.forRoot([]),
+    MatSelectModule,
   ],
+  exports: [InscriptionsComponent],
 })
 export class InscriptionsModule {}

@@ -3,4 +3,5 @@ export interface Course {
   name: string;
   startDate: Date | string;
   endDate: Date | string;
+  teacher: string;
 }

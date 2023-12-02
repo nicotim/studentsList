@@ -10,18 +10,21 @@ export class CoursesService {
       name: 'Javascript',
       startDate: new Date(),
       endDate: new Date(),
+      teacher: 'Dante',
     },
     {
       id: 2,
       name: 'Angular',
       startDate: new Date(),
       endDate: new Date(),
+      teacher: 'Jose',
     },
     {
       id: 3,
       name: 'ReactJS',
       startDate: new Date(),
       endDate: new Date(),
+      teacher: 'Dante',
     },
   ];
 

@@ -13,6 +13,7 @@ import { FormErrorPipe } from './pipes/form-error.pipe';
 import { FontSizeDirective } from './directives/font-size.directive';
 import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [FullnamePipe, FormErrorPipe, FontSizeDirective],
@@ -31,6 +32,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     FontSizeDirective,
     MatListModule,
     MatDatepickerModule,
+    MatSelectModule,
   ],
 })
 export class SharedModule {}
