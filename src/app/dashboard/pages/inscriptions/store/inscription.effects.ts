@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, concatMap } from 'rxjs/operators';
-import { Observable, forkJoin, of } from 'rxjs';
+import { Observable, concat, forkJoin, of } from 'rxjs';
 import { InscriptionActions } from './inscription.actions';
 import { HttpClient } from '@angular/common/http';
 import { environments } from 'src/environments/environment.local';
-import { Inscriptions } from '../models';
+import { CreateInscriptionPayload, Inscriptions } from '../models';
 import { Student } from '../../students/models';
 import { Course } from '../../courses/models';
 
@@ -48,6 +48,34 @@ export class InscriptionEffects {
     );
   });
 
+  createInscription$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(InscriptionActions.createInscription),
+      concatMap((actions) => {
+        return this.createInscription(actions.payload).pipe(
+          map((data) => InscriptionActions.loadInscriptions()),
+          catchError((error) =>
+            of(InscriptionActions.loadInscriptionsFailure({ error }))
+          )
+        );
+      })
+    );
+  });
+
+  deleteInscription$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(InscriptionActions.deleteInscription),
+      concatMap((actions) => {
+        return this.deleteInscription(actions.inscriptionId).pipe(
+          map((data) => InscriptionActions.loadInscriptions()),
+          catchError((error) =>
+            of(InscriptionActions.loadInscriptionsFailure({ error }))
+          )
+        );
+      })
+    );
+  });
+
   constructor(private actions$: Actions, private httpClient: HttpClient) {}
 
   getInscriptionDialogOptions(): Observable<{
@@ -70,6 +98,23 @@ export class InscriptionEffects {
   getInscriptions(): Observable<Inscriptions[]> {
     return this.httpClient.get<Inscriptions[]>(
       `${environments.baseUrl}/inscriptions?_expand=course&_expand=student`
+    );
+  }
+
+  createInscription(
+    payload: CreateInscriptionPayload
+  ): Observable<Inscriptions> {
+    return this.httpClient.post<Inscriptions>(
+      `${environments.baseUrl}/inscriptions`,
+      payload
+    );
+  }
+
+  deleteInscription(
+    inscriptionId: Inscriptions['id']
+  ): Observable<Inscriptions> {
+    return this.httpClient.delete<Inscriptions>(
+      `${environments.baseUrl}/inscriptions/${inscriptionId}`
     );
   }
 }

@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { Inscriptions } from '../models';
+import { CreateInscriptionPayload, Inscriptions } from '../models';
 import { Course } from '../../courses/models';
 import { Student } from '../../students/models';
 
@@ -15,5 +15,7 @@ export const InscriptionActions = createActionGroup({
       students: Student[];
     }>(),
     'Load Inscriptions Dialog Options Failure': props<{ error: unknown }>(),
+    'Create Inscription': props<{ payload: CreateInscriptionPayload }>(),
+    'Delete Inscription': props<{ inscriptionId: number }>(),
   },
 });

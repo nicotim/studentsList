@@ -9,7 +9,7 @@ import { User } from 'src/app/dashboard/pages/users/models';
 import { MockProvider } from 'ng-mocks';
 import { Router } from '@angular/router';
 import { environments } from 'src/environments/environment.local';
-import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 import { StoreModule } from '@ngrx/store';
 
 describe('AuthService', () => {

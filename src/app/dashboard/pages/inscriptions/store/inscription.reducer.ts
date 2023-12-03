@@ -1,6 +1,6 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { InscriptionActions } from './inscription.actions';
-import { Inscriptions } from '../models';
+import { CreateInscriptionPayload, Inscriptions } from '../models';
 import { Course } from '../../courses/models';
 import { Student } from '../../students/models';
 
@@ -66,7 +66,15 @@ export const reducer = createReducer(
       error: action.error,
       isLoadingDialogOptions: false,
     })
-  )
+  ),
+  //deleteInscriptions
+  on(InscriptionActions.deleteInscription, (state, { inscriptionId }) => ({
+    ...state,
+    isLoading: false,
+    inscriptions: state.inscriptions.filter(
+      (inscription) => inscription.id !== inscriptionId
+    ),
+  }))
 );
 
 export const inscriptionFeature = createFeature({

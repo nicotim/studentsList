@@ -3,7 +3,6 @@ import { User } from './models';
 import { Observable, concatMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environments } from 'src/environments/environment.local';
-import { Course } from '../courses/models';
 
 @Injectable({
   providedIn: 'root',

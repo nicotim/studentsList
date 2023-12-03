@@ -1,10 +1,14 @@
 <h1 mat-dialogue-title>Crear Inscripcion</h1>
 <div mat-dialog-content>
-  <form class="row" style="width: 400px; height: 180px; margin: auto">
+  <form
+    [formGroup]="inscriptionForm"
+    class="row"
+    style="width: 400px; height: 100px; margin: auto"
+  >
     <div class="col-6">
       <mat-form-field class="w-100">
         <mat-label>Curso</mat-label>
-        <mat-select>
+        <mat-select [formControl]="courseIdControl">
           <mat-option
             [value]="course.id"
             *ngFor="let course of courseOptions$ | async"
@@ -16,7 +20,7 @@
     <div class="col-6">
       <mat-form-field class="w-100">
         <mat-label>Estudiante</mat-label>
-        <mat-select>
+        <mat-select [formControl]="studentIdControl">
           <mat-option
             [value]="student.id"
             *ngFor="let student of studentOptions$ | async"
@@ -26,4 +30,10 @@
       </mat-form-field>
     </div>
   </form>
+</div>
+<div mat-dialog-actions class="buttons">
+  <button (click)="onSubmit()" mat-raised-button color="primary">
+    Guardar
+  </button>
+  <button mat-dialog-close mat-raised-button color="warn">Cancelar</button>
 </div>

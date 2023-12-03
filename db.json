@@ -51,8 +51,6 @@
       "name": "Wancho",
       "lastname": "Abila",
       "email": "abila@mail.com",
-      "token": "gadgaughkasff",
-      "password": "998877",
       "edad": 19,
       "pais": "Argentina"
     },
@@ -61,8 +59,6 @@
       "name": "Anto",
       "lastname": "Sanchez",
       "email": "anto@mail.com",
-      "token": "gadgauafaaaghkasff",
-      "password": "13579",
       "edad": 23,
       "pais": "Colombia"
     },
@@ -71,8 +67,6 @@
       "name": "Jose",
       "lastname": "Fernandez",
       "email": "jose@gmail.com",
-      "token": "gadgauadgggafaaaghkasff",
-      "password": "1111",
       "edad": 27,
       "pais": "Chile"
     }
