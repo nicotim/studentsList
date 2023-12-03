@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 import { environments } from 'src/environments/environment.local';
 import { provideMockStore } from '@ngrx/store/testing';
 import { StoreModule } from '@ngrx/store';
+import { State } from 'src/app/store/auth/auth.reducer';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 
 describe('AuthService', () => {
   let authService: AuthService;
@@ -19,7 +21,28 @@ describe('AuthService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, RouterTestingModule, StoreModule],
-      providers: [MockProvider(Router), provideMockStore({})],
+      providers: [
+        MockProvider(Router),
+        provideMockStore<State>({
+          initialState: {
+            authUser: null,
+          },
+          selectors: [
+            {
+              selector: selectAuthUser,
+              value: {
+                id: 1,
+                name: 'Nico',
+                lastname: 'tim',
+                email: 'fake@mail.com',
+                role: 'ADMIN',
+                token: 'asafaffaffsasffaf',
+                password: '123456',
+              },
+            },
+          ],
+        }),
+      ],
     });
 
     authService = TestBed.inject(AuthService);
