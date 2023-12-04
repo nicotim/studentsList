@@ -73,22 +73,22 @@
       "id": 1,
       "name": "Javascript",
       "teacher": "Franco Pedrini",
-      "startDate": "27/9/2023",
-      "endDate": "30/1/2024"
+      "startDate": "27-9-2021",
+      "endDate": "30-1-2022"
     },
     {
       "id": 2,
       "name": "React",
       "teacher": "Franco Pedrini",
-      "startDate": "2/11/2023",
-      "endDate": "19/4/2024"
+      "startDate": "2-11-2023",
+      "endDate": "19-4-2024"
     },
     {
       "id": 3,
-      "name": "UX/UI",
+      "name": "UX UI",
       "teacher": "Martin Abila",
-      "startDate": "17/12/2023",
-      "endDate": "2/5/2024"
+      "startDate": "17-12-2023",
+      "endDate": "2-5-2024"
     }
   ]
 }

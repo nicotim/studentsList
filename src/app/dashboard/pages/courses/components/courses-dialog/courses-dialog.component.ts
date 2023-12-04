@@ -1,12 +1,9 @@
 import { Component, Inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CoursesService } from '../../courses.service';
+
+import { Course } from '../../models';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-courses-dialog',
@@ -15,39 +12,50 @@ import { CoursesService } from '../../courses.service';
 })
 export class CoursesDialogComponent {
   minDate: Date;
-  nameControl = new FormControl('', [Validators.required]);
-  startDateControl = new FormControl();
-  endDateControl = new FormControl();
-
-  courseForm = new FormGroup({
-    name: this.nameControl,
-    startDate: this.startDateControl,
-    endDate: this.endDateControl,
-  });
+  courseForm: FormGroup;
+  teachers = ['Martin', 'Dante'];
 
   constructor(
+    private fb: FormBuilder,
     private matDialogRef: MatDialogRef<CoursesDialogComponent>,
-    private coursesService: CoursesService,
-    @Inject(MAT_DIALOG_DATA) public courseId?: number
+    @Inject(MAT_DIALOG_DATA) public course?: Course
   ) {
-    if (courseId) {
-      this.coursesService.getCourseById$(courseId).subscribe({
-        next: (c) => {
-          if (c) {
-            this.courseForm.patchValue(c);
-          }
-        },
-      });
-    }
+    this.courseForm = this.fb.group({
+      name: ['', Validators.required],
+      teacher: ['', Validators.required],
+      startDate: [null, Validators.required],
+      endDate: [null, Validators.required],
+    });
 
     this.minDate = new Date();
+
+    if (this.course) {
+      this.courseForm.patchValue(this.course);
+    }
   }
 
   onSubmit(): void {
     if (this.courseForm.invalid) {
-      return this.courseForm.markAllAsTouched();
+      this.courseForm.markAllAsTouched();
     } else {
-      this.matDialogRef.close(this.courseForm.value);
+      const startDate = this.courseForm.get('startDate')?.value;
+      const endDate = this.courseForm.get('endDate')?.value;
+
+      if (startDate && endDate) {
+        const formattedStartDate = formatDate(startDate, 'MM-dd-yyyy', 'en-US');
+        const formattedEndDate = formatDate(endDate, 'MM-dd-yyyy', 'en-US');
+
+        const modifiedValue = {
+          name: this.courseForm.get('name')?.value,
+          teacher: this.courseForm.get('teacher')?.value,
+          startDate: formattedStartDate,
+          endDate: formattedEndDate,
+        };
+
+        this.matDialogRef.close(modifiedValue);
+      } else {
+        console.error('Falta elegir alguna fecha.');
+      }
     }
   }
 }

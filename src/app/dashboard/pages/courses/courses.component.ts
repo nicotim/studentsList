@@ -14,12 +14,14 @@ import { TextUpdateService } from '../../dashboard.service';
 export class CoursesComponent {
   courses$: Observable<Course[]>;
 
+  course = '';
+
   constructor(
     private coursesService: CoursesService,
     private matDialog: MatDialog,
     private textUpdateService: TextUpdateService
   ) {
-    this.courses$ = this.coursesService.getCourses$();
+    this.courses$ = this.coursesService.getCourses();
     this.textUpdateService.updateText('Cursos');
   }
 
@@ -30,34 +32,28 @@ export class CoursesComponent {
       .open(CoursesDialogComponent)
       .afterClosed()
       .subscribe({
-        next: (result) => {
-          if (result) {
-            this.courses$ = this.coursesService.createCourse$({
-              id: Date.now(),
-              name: result.name,
-              startDate: result.startDate,
-              endDate: result.endDate,
-              teacher: result.teacher,
-            });
+        next: (v) => {
+          if (!!v) {
+            this.courses$ = this.coursesService.createCourse(v);
           }
         },
       });
   }
 
   onDeleteCourse(courseId: number): void {
-    this.courses$ = this.coursesService.deleteCourse$(courseId);
+    this.courses$ = this.coursesService.deleteCourse(courseId);
   }
 
-  onEditCourse(courseID: number): void {
+  onEditCourse(course: Course): void {
     this.matDialog
       .open(CoursesDialogComponent, {
-        data: courseID,
+        data: course,
       })
       .afterClosed()
       .subscribe({
-        next: (result) => {
-          if (!!result) {
-            this.courses$ = this.coursesService.editCourse$(courseID, result);
+        next: (v) => {
+          if (!!v) {
+            this.courses$ = this.coursesService.editCourse(course.id, v);
           }
         },
       });

@@ -52,7 +52,7 @@ export class StudentsDialogComponent {
     this.studentForm = this.fb.group({
       name: ['', Validators.required],
       lastname: ['', Validators.required],
-      country: [Validators.required, Validators.pattern('valid')],
+      country: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
     });
 

@@ -1,46 +1,41 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Id Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>#</th>
     <td mat-cell *matCellDef="let course">{{ course.id }}</td>
   </ng-container>
 
-  <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef appFontSize>Curso</th>
     <td mat-cell *matCellDef="let course">
-      {{ course.name }}
+      {{ course.name | uppercase }}
     </td>
   </ng-container>
 
-  <!-- StartDate-->
+  <ng-container matColumnDef="teacher">
+    <th mat-header-cell *matHeaderCellDef appFontSize>Profesor</th>
+    <td mat-cell *matCellDef="let course">
+      {{ course.teacher | uppercase }}
+    </td>
+  </ng-container>
+
   <ng-container matColumnDef="startDate">
     <th mat-header-cell *matHeaderCellDef appFontSize>Fecha de inicio</th>
     <td mat-cell *matCellDef="let course">
-      {{ course.startDate | date : "dd/MM/YYYY" }}
+      {{ course.startDate }}
     </td>
   </ng-container>
 
-  <!-- EndDate -->
   <ng-container matColumnDef="endDate">
     <th mat-header-cell *matHeaderCellDef appFontSize>Fecha de finalizacion</th>
     <td mat-cell *matCellDef="let course">
-      {{ course.endDate | date : "dd/MM/YYYY" }}
+      {{ course.endDate }}
     </td>
   </ng-container>
 
-  <!-- Action Column -->
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef appFontSize>Acciones</th>
     <td mat-cell *matCellDef="let course">
-      <button
-        (click)="editCourse.emit(course.id)"
-        mat-icon-button
-        color="primary"
-      >
+      <button (click)="editCourse.emit(course)" mat-icon-button color="primary">
         <mat-icon>edit</mat-icon>
       </button>
       <button
