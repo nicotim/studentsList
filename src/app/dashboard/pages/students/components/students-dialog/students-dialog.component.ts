@@ -11,6 +11,39 @@ import { Student } from '../../models';
 export class StudentsDialogComponent {
   studentForm: FormGroup;
 
+  countries = [
+    'Argentina',
+    'Belice',
+    'Bolivia',
+    'Brasil',
+    'Chile',
+    'Colombia',
+    'Costa Rica',
+    'Cuba',
+    'Dominica',
+    'Ecuador',
+    'El Salvador',
+    'Granada',
+    'Guatemala',
+    'Guyana',
+    'Haití',
+    'Honduras',
+    'Jamaica',
+    'México',
+    'Nicaragua',
+    'Panamá',
+    'Paraguay',
+    'Perú',
+    'República Dominicana',
+    'San Cristóbal y Nieves',
+    'San Vicente y las Granadinas',
+    'Santa Lucía',
+    'Surinam',
+    'Trinidad y Tobago',
+    'Uruguay',
+    'Venezuela',
+  ];
+
   constructor(
     private fb: FormBuilder,
     private matDialogRef: MatDialogRef<StudentsDialogComponent>,
@@ -19,7 +52,7 @@ export class StudentsDialogComponent {
     this.studentForm = this.fb.group({
       name: ['', Validators.required],
       lastname: ['', Validators.required],
-      country: ['', Validators.required],
+      country: [Validators.required, Validators.pattern('valid')],
       email: ['', [Validators.email, Validators.required]],
     });
 
