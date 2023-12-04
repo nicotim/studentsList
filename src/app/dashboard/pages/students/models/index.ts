@@ -3,6 +3,5 @@ export interface Student {
   name: string;
   lastname: string;
   email: string;
-  edad: number;
-  pais: string;
+  country: string;
 }

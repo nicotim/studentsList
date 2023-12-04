@@ -51,24 +51,21 @@
       "name": "Wancho",
       "lastname": "Abila",
       "email": "abila@mail.com",
-      "edad": 19,
-      "pais": "Argentina"
+      "country": "Argentina"
     },
     {
       "id": 2,
       "name": "Anto",
       "lastname": "Sanchez",
       "email": "anto@mail.com",
-      "edad": 23,
-      "pais": "Colombia"
+      "country": "Colombia"
     },
     {
-      "id": 3,
       "name": "Jose",
       "lastname": "Fernandez",
+      "country": "Chile",
       "email": "jose@gmail.com",
-      "edad": 27,
-      "pais": "Chile"
+      "id": 3
     }
   ],
   "courses": [
