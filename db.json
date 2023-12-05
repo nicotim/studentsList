@@ -28,11 +28,12 @@
       "password": "1234"
     },
     {
-      "name": "sgdg",
-      "lastname": "agag",
+      "name": "Jose",
+      "lastname": "Balso",
       "role": "EMPLOYEE",
-      "email": "agagg@mail.com",
-      "password": "123123132AAA",
+      "email": "balso@gmail.com",
+      "password": "123456Aa",
+      "token": "ZULOfMsT",
       "id": 4
     }
   ],

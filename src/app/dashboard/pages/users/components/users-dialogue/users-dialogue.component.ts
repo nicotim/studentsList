@@ -42,6 +42,16 @@ export class UsersDialogueComponent {
     }
   }
 
+  generateToken(length: number): string {
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let token = '';
+    for (let i = 0; i < length; i++) {
+      const randomNumber = Math.floor(Math.random() * characters.length);
+      token += characters[randomNumber];
+    }
+    return token;
+  }
+
   fetchUsers() {
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
@@ -53,7 +63,9 @@ export class UsersDialogueComponent {
     if (this.userForm.invalid) {
       this.userForm.markAllAsTouched();
     } else {
-      this.matDialogRef.close(this.userForm.value);
+      const formData = this.userForm.value;
+      formData.token = this.generateToken(8);
+      this.matDialogRef.close(formData);
     }
   }
 
