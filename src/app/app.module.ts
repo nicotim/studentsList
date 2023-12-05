@@ -17,7 +17,7 @@ import { appReducer } from './store';
     BrowserAnimationsModule,
     CoreModule,
     StoreModule.forRoot(appReducer, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() , connectInZone: true}),
   ],
   providers: [
     {

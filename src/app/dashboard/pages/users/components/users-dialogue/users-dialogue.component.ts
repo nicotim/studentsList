@@ -13,6 +13,11 @@ export class UsersDialogueComponent {
   userForm: FormGroup;
   users: User[] = [];
   roles: UserRole[] = [];
+  showPassword: boolean = false;
+
+  passwordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 
   constructor(
     private fb: FormBuilder,
