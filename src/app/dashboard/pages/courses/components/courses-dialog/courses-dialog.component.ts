@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 import { Course } from '../../models';
 import { formatDate } from '@angular/common';
+import { CoursesService } from '../../courses.service';
 
 @Component({
   selector: 'app-courses-dialog',
@@ -13,25 +14,34 @@ import { formatDate } from '@angular/common';
 export class CoursesDialogComponent {
   minDate: Date;
   courseForm: FormGroup;
-  teachers = ['Martin', 'Dante'];
+  courses: Course[] = [];
+  teachers: string[] = [];
 
   constructor(
     private fb: FormBuilder,
     private matDialogRef: MatDialogRef<CoursesDialogComponent>,
+    private coursesService: CoursesService,
     @Inject(MAT_DIALOG_DATA) public course?: Course
   ) {
     this.courseForm = this.fb.group({
       name: ['', Validators.required],
-      teacher: ['', Validators.required],
+      teacher: [null, Validators.required],
       startDate: [null, Validators.required],
       endDate: [null, Validators.required],
     });
 
     this.minDate = new Date();
-
+    this.fetchCourses();
     if (this.course) {
       this.courseForm.patchValue(this.course);
     }
+  }
+
+  fetchCourses() {
+    this.coursesService.getCourses().subscribe((courses: Course[]) => {
+      this.courses = courses;
+      this.listOfTeachers();
+    });
   }
 
   onSubmit(): void {
@@ -57,5 +67,11 @@ export class CoursesDialogComponent {
         console.error('Falta elegir alguna fecha.');
       }
     }
+  }
+
+  listOfTeachers() {
+    this.teachers = Array.from(
+      new Set(this.courses.map((course) => course.teacher))
+    );
   }
 }

@@ -37,7 +37,7 @@ export class InscriptionDialogComponent {
   constructor(
     private store: Store,
     private action$: Actions,
-    private madDialogRef: MatDialogRef<InscriptionDialogComponent>
+    private matDialogRef: MatDialogRef<InscriptionDialogComponent>
   ) {
     this.store.dispatch(InscriptionActions.loadInscriptionsDialogOptions());
     this.courseOptions$ = this.store.select(selectCourseOptions);
@@ -45,7 +45,7 @@ export class InscriptionDialogComponent {
     this.action$
       .pipe(ofType(InscriptionActions.loadInscriptions), take(1))
       .subscribe({
-        next: () => this.madDialogRef.close(),
+        next: () => this.matDialogRef.close(),
       });
   }
 

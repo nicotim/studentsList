@@ -11,7 +11,7 @@
   <ng-container matColumnDef="course">
     <th mat-header-cell *matHeaderCellDef appFontSize>Curso</th>
     <td mat-cell *matCellDef="let inscription">
-      {{ inscription.course?.name }}
+      {{ inscription.course?.name | uppercase }}
     </td>
   </ng-container>
 

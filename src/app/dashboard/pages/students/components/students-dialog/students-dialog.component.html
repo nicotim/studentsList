@@ -9,8 +9,12 @@
   >
     <div class="col-6">
       <mat-form-field class="w-100">
-        <mat-label>Nombre</mat-label>
-        <input formControlName="name" matInput />
+        <mat-label for="nameField">Nombre</mat-label>
+        <input
+          formControlName="name"
+          matInput
+          (blur)="markFieldAsTouched('name')"
+        />
         <mat-error>
           {{ studentForm.get("name")?.errors | formError }}
         </mat-error>

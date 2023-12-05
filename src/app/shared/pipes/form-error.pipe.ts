@@ -20,6 +20,11 @@ export class FormErrorPipe implements PipeTransform {
       if ('email' in value) {
         errorMessages.push('Debe ser un correo valido');
       }
+      if ('pattern' in value) {
+        errorMessages.push(
+          'Debe contener al menos 1 mayuscula, 1 minuscula y tener 8 caracteres'
+        );
+      }
     }
     return errorMessages.join('. ');
   }

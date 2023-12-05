@@ -52,12 +52,19 @@ export class StudentsDialogComponent {
     this.studentForm = this.fb.group({
       name: ['', Validators.required],
       lastname: ['', Validators.required],
-      country: ['', Validators.required],
-      email: ['', [Validators.email, Validators.required]],
+      country: [null, Validators.required],
+      email: ['', [Validators.required, Validators.email]],
     });
 
     if (this.student) {
       this.studentForm.patchValue(this.student);
+    }
+  }
+
+  markFieldAsTouched(field: string) {
+    const control = this.studentForm.get(field);
+    if (control && !control.touched) {
+      control.markAsTouched();
     }
   }
 

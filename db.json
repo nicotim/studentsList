@@ -26,6 +26,14 @@
       "token": "gadgaughkasff",
       "role": "EMPLOYEE",
       "password": "1234"
+    },
+    {
+      "name": "agaga",
+      "lastname": "agagag",
+      "role": "EMPLOYEE",
+      "email": "aaggag@mai.com",
+      "password": "12123113AAA",
+      "id": 4
     }
   ],
   "inscriptions": [
