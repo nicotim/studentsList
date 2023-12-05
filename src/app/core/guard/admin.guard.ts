@@ -15,6 +15,7 @@ export class AdminGuard implements CanActivate {
     return this.store.select(selectAuthUser).pipe(
       map((usuario) => {
         if (usuario?.role !== 'ADMIN') {
+          alert('No esta autorizado para acceder a esta pestaña');
           return this.router.createUrlTree(['/dashboard/home']);
         } else {
           return true;

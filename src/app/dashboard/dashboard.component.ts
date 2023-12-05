@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth/services/auth.service';
-import { Observable, map } from 'rxjs';
-import { User } from './pages/users/models';
 import { TextUpdateService } from './dashboard.service';
 
 @Component({
