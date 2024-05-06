@@ -31,10 +31,8 @@ export class InscriptionEffects {
       concatMap(() =>
         this.getInscriptionDialogOptions().pipe(
           map(
-            (respuesta) =>
-              InscriptionActions.loadInscriptionsDialogOptionsSuccess(
-                respuesta
-              ),
+            (res) =>
+              InscriptionActions.loadInscriptionsDialogOptionsSuccess(res),
             catchError((error) =>
               of(
                 InscriptionActions.loadInscriptionsDialogOptionsFailure({

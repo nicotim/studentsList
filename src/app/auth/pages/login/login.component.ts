@@ -11,8 +11,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
-  emailControl = new FormControl('', [Validators.required, Validators.email]);
-  passwordControl = new FormControl('', [Validators.required]);
+  emailControl = new FormControl('fake@mail.com', [
+    Validators.required,
+    Validators.email,
+  ]);
+  passwordControl = new FormControl('123456', [Validators.required]);
 
   loginForm = new FormGroup({
     email: this.emailControl,
