@@ -1,10 +1,9 @@
-# Levantar proyecto
+# Deployment
 
-Para levantar el proyecto hay que ir a la terminal y usar:
-npm run start (Levanta el proyecto)
-npm run db (para la api)
+Deploy the project: npm start
+Run the database: npm run db
 
-# Usuarios
+# Users
 
 Admin:
 Mail: fake@mail.com
