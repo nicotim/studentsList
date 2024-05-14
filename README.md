@@ -1,8 +1,8 @@
 # Levantar proyecto
 
 Para levantar el proyecto hay que ir a la terminal y usar:
-ng s -o (para levantar el servidor)
-json-server db.json --watch (para la api)
+npm run start (Levanta el proyecto)
+npm run db (para la api)
 
 # Usuarios
 

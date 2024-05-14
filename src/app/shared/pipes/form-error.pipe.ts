@@ -15,14 +15,14 @@ export class FormErrorPipe implements PipeTransform {
     const errorMessages: string[] = [];
     if (value) {
       if ('required' in value) {
-        errorMessages.push('Este campo es requerido');
+        errorMessages.push('This field is required.');
       }
       if ('email' in value) {
-        errorMessages.push('Debe ser un correo valido');
+        errorMessages.push('Provide a valid email address.');
       }
       if ('pattern' in value) {
         errorMessages.push(
-          'Debe contener al menos 1 mayuscula, 1 minuscula y tener 8 caracteres'
+          'Password must contain at least one uppercase letter, one lowercase letter, and be at least 8 characters long.'
         );
       }
     }

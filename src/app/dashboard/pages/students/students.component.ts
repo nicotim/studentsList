@@ -22,7 +22,7 @@ export class StudentsComponent {
     private studentsService: StudentsService
   ) {
     this.students$ = this.studentsService.getStudents();
-    this.textUpdateService.updateText('Estudiantes');
+    this.textUpdateService.updateText('Students');
   }
 
   ngOnInit() {}

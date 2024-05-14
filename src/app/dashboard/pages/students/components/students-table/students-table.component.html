@@ -5,7 +5,7 @@
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef appFontSize>Nombre Completo</th>
+    <th mat-header-cell *matHeaderCellDef appFontSize>Full Name</th>
     <td mat-cell *matCellDef="let student">
       {{ student | fullname : "uppercase" }}
     </td>
@@ -17,14 +17,14 @@
   </ng-container>
 
   <ng-container matColumnDef="country">
-    <th mat-header-cell *matHeaderCellDef appFontSize>Pais</th>
+    <th mat-header-cell *matHeaderCellDef appFontSize>Country</th>
     <td mat-cell *matCellDef="let student">
       {{ student.country | uppercase }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef appFontSize>Acciones</th>
+    <th mat-header-cell *matHeaderCellDef appFontSize>Actions</th>
     <td mat-cell *matCellDef="let student">
       <button
         (click)="editStudent.emit(student)"

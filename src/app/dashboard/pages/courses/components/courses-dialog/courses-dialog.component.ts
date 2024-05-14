@@ -64,7 +64,7 @@ export class CoursesDialogComponent {
 
         this.matDialogRef.close(modifiedValue);
       } else {
-        console.error('Falta elegir alguna fecha.');
+        console.error('Choose a date.');
       }
     }
   }
