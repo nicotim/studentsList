@@ -57,11 +57,11 @@ describe('AuthService', () => {
     expect(authService).toBeTruthy();
   });
 
-  it('login should establish an authentified user', () => {
+  it('login should establish an Autentified user', () => {
     const USER_MOCK: User = {
       id: 1,
       name: 'Nico',
-      lastname: 'tim',
+      lastname: 'Tim',
       email: 'fake@mail.com',
       role: 'ADMIN',
       token: 'asafaffaffsasffaf',
