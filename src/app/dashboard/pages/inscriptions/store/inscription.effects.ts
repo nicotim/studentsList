@@ -84,10 +84,10 @@ export class InscriptionEffects {
       this.httpClient.get<Course[]>(`${environments.baseUrl}/courses`),
       this.httpClient.get<Student[]>(`${environments.baseUrl}/students`),
     ]).pipe(
-      map((respuesta) => {
+      map((res) => {
         return {
-          courses: respuesta[0],
-          students: respuesta[1],
+          courses: res[0],
+          students: res[1],
         };
       })
     );

@@ -1,5 +1,5 @@
 <h1 mat-dialogue-title>
-  {{ user ? "Editar Usuario" : "Crear Usuario" }}
+  {{ user ? "Edit User" : "Add User" }}
 </h1>
 <div mat-dialogue-content>
   <form
@@ -9,7 +9,7 @@
   >
     <div class="col-6">
       <mat-form-field class="w-100">
-        <mat-label>Nombre</mat-label>
+        <mat-label>First Name</mat-label>
         <input formControlName="name" matInput />
         <mat-error>
           {{ userForm.get("name")?.errors | formError }}
@@ -18,7 +18,7 @@
     </div>
     <div class="col-6">
       <mat-form-field class="w-100">
-        <mat-label>Apellido</mat-label>
+        <mat-label>Last Name</mat-label>
         <input matInput formControlName="lastname" />
         <mat-error>
           {{ userForm.get("lastname")?.errors | formError }}
@@ -66,8 +66,6 @@
   </form>
 </div>
 <div mat-dialogue-actions class="buttons">
-  <button mat-raised-button (click)="onSubmit()" color="primary">
-    Guardar
-  </button>
-  <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+  <button mat-raised-button (click)="onSubmit()" color="primary">Save</button>
+  <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
 </div>

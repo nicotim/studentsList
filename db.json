@@ -1,65 +1,80 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Nico",
-      "lastname": "Timo",
+      "id": 1,
+      "name": "Matias",
+      "lastname": "Antares",
       "email": "fake@mail.com",
       "token": "asassfasfasfaasffa",
       "role": "ADMIN",
       "password": "123456"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Franco",
       "lastname": "Pedrini",
       "email": "Pedrini@gmail.com",
       "token": "etqetqhoiqjmkqf",
       "role": "EMPLOYEE",
       "password": "654321"
+    },
+    {
+      "name": "Kevin",
+      "lastname": "Durant",
+      "role": "ADMIN",
+      "email": "durant@gmail.com",
+      "password": "duranTEn",
+      "token": "RORbUEHZ",
+      "id": 3
     }
   ],
-  "inscriptions": [],
+  "inscriptions": [
+    {
+      "courseId": 2,
+      "studentId": 2,
+      "id": 1
+    }
+  ],
   "students": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Wancho",
       "lastname": "Abila",
       "email": "abila@mail.com",
       "country": "Argentina"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Anto",
       "lastname": "Sanchez",
       "email": "anto@mail.com",
       "country": "Colombia"
     },
     {
-      "name": "Jose",
-      "lastname": "Fernandez",
-      "country": "Chile",
-      "email": "jose@gmail.com",
-      "id": "3"
+      "name": "Sofia",
+      "lastname": "Balsa",
+      "country": "Brasil",
+      "email": "sofi@gmail.com",
+      "id": 3
     }
   ],
   "courses": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Javascript",
       "teacher": "Franco Pedrini",
       "startDate": "27-9-2021",
       "endDate": "30-1-2022"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "React",
       "teacher": "Franco Pedrini",
       "startDate": "2-11-2023",
       "endDate": "19-4-2024"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "UX UI",
       "teacher": "Martin Abila",
       "startDate": "17-12-2023",

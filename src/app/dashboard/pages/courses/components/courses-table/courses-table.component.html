@@ -5,35 +5,35 @@
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef appFontSize>Curso</th>
+    <th mat-header-cell *matHeaderCellDef appFontSize>Course</th>
     <td mat-cell *matCellDef="let course">
       {{ course.name | uppercase }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="teacher">
-    <th mat-header-cell *matHeaderCellDef appFontSize>Profesor</th>
+    <th mat-header-cell *matHeaderCellDef appFontSize>Teacher</th>
     <td mat-cell *matCellDef="let course">
       {{ course.teacher | uppercase }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="startDate">
-    <th mat-header-cell *matHeaderCellDef appFontSize>Fecha de inicio</th>
+    <th mat-header-cell *matHeaderCellDef appFontSize>Start Date</th>
     <td mat-cell *matCellDef="let course">
       {{ course.startDate }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="endDate">
-    <th mat-header-cell *matHeaderCellDef appFontSize>Fecha de finalizacion</th>
+    <th mat-header-cell *matHeaderCellDef appFontSize>End Date</th>
     <td mat-cell *matCellDef="let course">
       {{ course.endDate }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef appFontSize>Acciones</th>
+    <th mat-header-cell *matHeaderCellDef appFontSize>Actions</th>
     <td mat-cell *matCellDef="let course">
       <button (click)="editCourse.emit(course)" mat-icon-button color="primary">
         <mat-icon>edit</mat-icon>

@@ -1,6 +1,6 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { InscriptionActions } from './inscription.actions';
-import { CreateInscriptionPayload, Inscriptions } from '../models';
+import { Inscriptions } from '../models';
 import { Course } from '../../courses/models';
 import { Student } from '../../students/models';
 

@@ -5,7 +5,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TextUpdateService {
-  private textSource = new BehaviorSubject<string>('Aplicación Administrativa');
+  private textSource = new BehaviorSubject<string>(
+    'Administrative Application'
+  );
   currentText$: Observable<string> = this.textSource.asObservable();
 
   updateText(newText: string) {
