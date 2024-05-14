@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "name": "Nico",
-      "lastname": "Timo",
+      "name": "Matias",
+      "lastname": "Antares",
       "email": "fake@mail.com",
       "token": "asassfasfasfaasffa",
       "role": "ADMIN",
@@ -19,11 +19,11 @@
       "password": "654321"
     },
     {
-      "name": "Nicolas",
-      "lastname": "Timochenko",
+      "name": "Kevin",
+      "lastname": "Durant",
       "role": "ADMIN",
-      "email": "nik22timo@gmail.com",
-      "password": "81895nico",
+      "email": "durant@gmail.com",
+      "password": "duranTEn",
       "token": "RORbUEHZ",
       "id": 3
     }
